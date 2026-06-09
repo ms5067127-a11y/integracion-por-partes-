@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Integración por Partes</title>
+
+<style>
+
+body{
+
+font-family:Arial;
+
+padding:20px;
+
+background:#e6e6ff;
+
+}
+
+.caja{
+
+background:white;
+
+padding:20px;
+
+border-radius:10px;
+
+max-width:500px;
+
+margin:auto;
+
+}
+
+input,button{
+
+width:100%;
+
+padding:12px;
+
+margin-top:10px;
+
+}
+
+button{
+
+background:#6f42c1;
+
+color:white;
+
+border:none;
+
+}
+
+#resultado{
+
+margin-top:20px;
+
+font-size:18px;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="caja">
+
+<h1>Integración por Partes</h1>
+
+<p>Ingresa el exponente de x en xⁿ·eˣ</p>
+
+<input id="numero" placeholder="Ejemplo: 2">
+
+<button onclick="resolver()">
+
+Resolver
+
+</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function resolver(){
+
+let n = parseInt(document.getElementById("numero").value);
+
+if(isNaN(n)){
+
+document.getElementById("resultado").innerHTML =
+
+"Escribe un número";
+
+return;
+
+}
+
+document.getElementById("resultado").innerHTML =
+
+"<b>Fórmula:</b><br>" +
+
+"∫u dv = uv - ∫v du<br><br>" +
+
+"<b>Ejemplo:</b><br>" +
+
+"∫x^" + n + "e^x dx<br>" +
+
+"u = x^" + n + "<br>" +
+
+"dv = e^x dx<br><br>" +
+
+"Aplicamos: uv - ∫vdu";
+
+}
+
+</script>
+
+</body>
+
+</html>
